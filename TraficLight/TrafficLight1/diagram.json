@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "author": "MUHAMMAD KADAVI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -4.76, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -61.2,
+      "left": -44.2,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -61.2,
+      "left": 51.8,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -61.2,
+      "left": 138.2,
+      "attrs": { "color": "limegreen" }
+    },
+    { "type": "wokwi-ili9341", "id": "lcd1", "top": -258.4, "left": -307.5,"attrs": {}
+ }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "led3:A", "esp:33", "green", [ "v0" ] ],
+    [ "led3:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led2:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "green", [ "v0" ] ],
+    [ "led2:A", "esp:26", "green", [ "v0" ] ],
+    [ "led1:A", "esp:27", "green", [ "v0" ] ],
+    [ "lcd1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "lcd1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "lcd1:CS", "esp:5", "green", [ "v0" ] ],
+    [ "lcd1:RST", "esp:4", "green", [ "v0" ] ],
+    [ "lcd1:D/C", "esp:2", "green", [ "v115.2", "h288" ] ],
+    [ "lcd1:MOSI", "esp:23", "green", [ "v0" ] ],
+    [ "lcd1:SCK", "esp:18", "green", [ "v0" ] ],
+    [ "lcd1:LED", "esp:3V3", "green", [ "v0" ] ],
+    [ "lcd1:MISO", "esp:19", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
