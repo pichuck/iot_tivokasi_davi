@@ -1,0 +1,26 @@
+{
+    "version": 1,
+    "author": "MUHAMMAD KADAVI",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+      {
+        "type": "wokwi-hc-sr04",
+        "id": "ultrasonic1",
+        "top": 1.5,
+        "left": 187.9,
+        "attrs": { "distance": "219" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX", "$serialMonitor:TX", "", [] ],
+      [ "ultrasonic1:VCC", "esp:5V", "red", [ "v172.8", "h-67.2" ] ],
+      [ "ultrasonic1:TRIG", "esp:GPIO23", "blue", [] ],
+      [ "ultrasonic1:ECHO", "esp:GPIO22", "green", [] ],
+      [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v48", "h-154.8", "v19.2" ] ],
+      [ "ultrasonic1:ECHO", "esp:18", "green", [ "v0" ] ],
+      [ "ultrasonic1:TRIG", "esp:5", "green", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
